@@ -1,0 +1,28 @@
+@import '../../../app/styles/shared.css';
+
+.Votes {
+	background-color: var(--neutral-light-gray);
+	border-radius: 5px;
+	width: 30px;
+	height: 75px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	color: var(--primary-moderate-blue);
+	font-weight: 500;
+}
+
+.Votes.isMobile {
+	flex-direction: row;
+	width: 85px;
+	height: 30px;
+	align-items: center;
+}
+
+.Votes button {
+	display: flex;
+	background-color: var(--neutral-light-gray);
+	border: none;
+	cursor: pointer;
+}

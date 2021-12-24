@@ -1,0 +1,24 @@
+@import '../../../app/styles/shared.css';
+
+.Action {
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.Action span {
+	font-weight: 500;
+	color: var(--primary-moderate-blue);
+}
+
+.Action.delete span {
+	color: var(--primary-soft-red);
+}
+
+.Action img {
+	width: 16px;
+	height: 16px;
+	margin-right: 6px;
+}

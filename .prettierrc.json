@@ -1,0 +1,10 @@
+{
+  "printWidth": 120,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "useTabs": true,
+  "bracketSpacing": false,
+  "trailingComma": "es5",
+  "overrides": [],
+  "braceStyle": "1tbs"
+}
