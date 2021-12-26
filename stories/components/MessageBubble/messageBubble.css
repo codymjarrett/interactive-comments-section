@@ -1,0 +1,49 @@
+@import '../../../app/styles/shared.css';
+
+.MessageBubble {
+	background-color: var(--neutral-white);
+	width: 250px;
+	/* height: 250px; */
+	border-radius: 5px;
+	padding: 1rem;
+	font-size: 13px;
+}
+
+.MessageBubble__header img {
+	width: 40px;
+	height: 40px;
+}
+
+.MessageBubble__header.isMobile {
+	display: flex;
+	align-items: center;
+}
+
+.MessageBubble__header.MessageBubble__header.isMobile .Avatar,
+.MessageBubble__header.MessageBubble__header.isMobile .Handle {
+	margin-right: 1rem;
+}
+
+.Handle {
+	color: var(--neutral-dark-blue);
+	font-weight: 500;
+}
+
+.Date {
+	color: var(--neutral-grayish-blue);
+}
+
+.MessageBubble__content,
+.MessageBubble__footer {
+	margin-top: 1rem;
+}
+
+.MessageBubble__content {
+	color: var(--neutral-grayish-blue);
+	line-height: 1.4;
+}
+
+.MessageBubble__footer {
+	display: flex;
+	justify-content: space-between;
+}

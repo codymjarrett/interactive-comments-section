@@ -2,7 +2,7 @@ import React from 'react';
 import './action.css';
 
 interface ActionProps {
-	type: 'edit' | 'reply' | 'delete';
+	type?: 'edit' | 'reply' | 'delete';
 	OnClick: () => void;
 }
 
@@ -36,12 +36,16 @@ const determineActionProps = (action: 'edit' | 'reply' | 'delete') => {
 const Action = (props: ActionProps) => {
 	const {type, OnClick} = props;
 
-	const {imgSrc, alt, text} = determineActionProps(type);
+	let actionProps;
+
+	if (type) {
+		actionProps = determineActionProps(type);
+	}
 
 	return (
-		<button className={`Action ${type}`} onClick={OnClick}>
-			<img src={imgSrc} alt={alt} />
-			<span>{text}</span>
+		<button className={`Action ${type ?? 'reply'}`} onClick={OnClick}>
+			<img src={actionProps?.imgSrc ?? '/icons/icon-reply.svg'} alt={actionProps?.alt ?? 'reply'} />
+			<span className='text'>{actionProps?.text ?? 'Reply'}</span>
 		</button>
 	);
 };

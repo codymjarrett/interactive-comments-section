@@ -22,3 +22,7 @@
 	height: 16px;
 	margin-right: 6px;
 }
+
+.Action .text {
+	font-weight: 700;
+}
