@@ -2,18 +2,16 @@ import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 
 import Vote from './Vote';
-import Container from '../Container';
 
 export default {
 	title: 'Components/Vote',
 	component: Vote,
+	parameters: {
+		layout: 'centered',
+	},
 } as ComponentMeta<typeof Vote>;
 
-const Template: ComponentStory<typeof Vote> = (args) => (
-	<Container>
-		<Vote {...args} />
-	</Container>
-);
+const Template: ComponentStory<typeof Vote> = (args) => <Vote {...args} />;
 
 export const Desktop = Template.bind({});
 Desktop.args = {

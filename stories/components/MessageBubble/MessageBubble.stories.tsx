@@ -2,17 +2,19 @@ import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 
 import MessageBubble from './MessageBubble';
-import Container from '../Container';
 
 export default {
 	title: 'Components/MessageBubble',
 	component: MessageBubble,
+	parameters: {
+		layout: 'centered',
+	},
 } as ComponentMeta<typeof MessageBubble>;
 
 const Template: ComponentStory<typeof MessageBubble> = (args) => (
-	<Container bgColor='--neutral-light-gray'>
+	<div style={{padding: '1rem'}}>
 		<MessageBubble {...args} />
-	</Container>
+	</div>
 );
 
 export const Desktop = Template.bind({});

@@ -42,9 +42,37 @@ const MessageBubble = (props: MessageBubbleProps) => {
 
 		return classes.join(' ');
 	};
+
+	const classNames = classes();
+
+	if (!isMobile) {
+		return (
+			<div className={`MessageBubble ${classNames}`}>
+				<div style={{display: 'flex', alignItems: 'center'}}>
+					<div style={{marginRight: '2rem'}}>
+						<Vote isMobile={isMobile} />
+					</div>
+					<div>
+						<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+							<div className={`MessageBubble__header ${classNames}`}>
+								<Avatar imageSrc='/avatars/image-amyrobson.png' alt='some girl' />
+								<Handle handle={message.handle} />
+								<Date createdAt={message.createdAt} />
+							</div>
+							<div>
+								<Action OnClick={() => console.log('should reply')} />
+							</div>
+						</div>
+						<div className='MessageBubble__content'>{message.text}</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
+
 	return (
-		<div className='MessageBubble'>
-			<div className={`MessageBubble__header ${classes()}`}>
+		<div className={`MessageBubble ${classNames}`}>
+			<div className={`MessageBubble__header ${classNames}`}>
 				<Avatar imageSrc='/avatars/image-amyrobson.png' alt='some girl' />
 				<Handle handle={message.handle} />
 				<Date createdAt={message.createdAt} />

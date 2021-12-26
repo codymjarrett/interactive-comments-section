@@ -2,18 +2,16 @@ import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 
 import Action from './Action';
-import Container from '../Container';
 
 export default {
 	title: 'Components/Action',
 	component: Action,
+	parameters: {
+		layout: 'centered',
+	},
 } as ComponentMeta<typeof Action>;
 
-const Template: ComponentStory<typeof Action> = (args) => (
-	<Container>
-		<Action {...args} />
-	</Container>
-);
+const Template: ComponentStory<typeof Action> = (args) => <Action {...args} />;
 
 export const Edit = Template.bind({});
 Edit.args = {

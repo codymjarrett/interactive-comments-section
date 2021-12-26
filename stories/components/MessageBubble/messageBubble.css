@@ -2,11 +2,13 @@
 
 .MessageBubble {
 	background-color: var(--neutral-white);
-	width: 250px;
-	/* height: 250px; */
 	border-radius: 5px;
 	padding: 1rem;
 	font-size: 13px;
+	max-width: 550px;
+}
+.MessageBubble.isMobile {
+	width: 250px;
 }
 
 .MessageBubble__header img {
@@ -14,13 +16,18 @@
 	height: 40px;
 }
 
+.MessageBubble__header {
+	display: flex;
+	align-items: center;
+}
+
 .MessageBubble__header.isMobile {
 	display: flex;
 	align-items: center;
 }
 
-.MessageBubble__header.MessageBubble__header.isMobile .Avatar,
-.MessageBubble__header.MessageBubble__header.isMobile .Handle {
+.MessageBubble__header.MessageBubble__header .Avatar,
+.MessageBubble__header.MessageBubble__header .Handle {
 	margin-right: 1rem;
 }
 
