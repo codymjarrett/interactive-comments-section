@@ -11,11 +11,7 @@ export default {
 	},
 } as ComponentMeta<typeof MessageBubble>;
 
-const Template: ComponentStory<typeof MessageBubble> = (args) => (
-	<div style={{padding: '1rem'}}>
-		<MessageBubble {...args} />
-	</div>
-);
+const Template: ComponentStory<typeof MessageBubble> = (args) => <MessageBubble {...args} />;
 
 export const Desktop = Template.bind({});
 Desktop.args = {

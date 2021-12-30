@@ -45,6 +45,8 @@ const MessageBubble = (props: MessageBubbleProps) => {
 
 	const classNames = classes();
 
+	// not as DRY but better than a bunch of confusing conditional logic
+
 	if (!isMobile) {
 		return (
 			<div className={`MessageBubble ${classNames}`}>
