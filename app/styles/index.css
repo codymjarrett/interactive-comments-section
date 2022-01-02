@@ -1,0 +1,24 @@
+.Messages,
+.Replies {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.Messages {
+	width: 800px;
+}
+
+.Replies {
+	position: relative;
+}
+.Replies::before {
+	content: '';
+	width: 2px;
+	height: calc(100% - 1rem);
+	background-color: var(--neutral-light-gray);
+	position: absolute;
+	left: 0;
+	margin: 1rem 0 1rem 2rem;
+}

@@ -6,11 +6,11 @@ import action from '../../stories/components/Action/action.css';
 import avatar from '../../stories/components/Avatar/avatar.css';
 import reply from '../../stories/components/Reply/reply.css';
 import vote from '../../stories/components/Vote/vote.css';
-import replies from './index.css';
+import replies from '../styles/index.css';
 
 /* components */
 
-import {MessageBubble} from '../components/';
+import {MessageBubble, type Message} from '../components/';
 
 import {MessageData} from '../../data';
 
@@ -36,18 +36,13 @@ export default function Index() {
 				height: '100vh',
 			}}
 		>
-			<div
-				style={{
-					width: '800px',
-					margin: '0 auto',
-				}}
-			>
-				{data.map((message) => (
+			<div className='Messages'>
+				{data.map((message: Message) => (
 					<div style={{marginTop: '1rem'}}>
 						<MessageBubble isMobile={false} message={message} />
 						<div className='Replies'>
 							{message?.replies &&
-								message.replies.map((message) => (
+								message.replies.map((message: Message) => (
 									<div style={{marginTop: '1rem', width: '500px'}}>
 										<MessageBubble isMobile={false} message={message} />
 									</div>

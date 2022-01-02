@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import moment from 'moment';
 
 import styles from './messageBubble.css';
 
@@ -7,11 +6,15 @@ import Avatar from '../Avatar/Avatar';
 import Vote from '../Vote/Vote';
 import Action from '../Action/Action';
 
-interface Message {
+export interface Message {
+	id: number;
+	createdAt: string;
 	handle: string;
-	createdAt: number;
-	text: string;
 	image: string;
+	score: number;
+	text: string;
+	replyingTo?: string;
+	replies?: Message[];
 }
 
 interface MessageBubbleProps {
@@ -23,12 +26,8 @@ const Handle = ({handle}: {handle: string}) => {
 	return <div className='Handle'>{handle}</div>;
 };
 
-const Date = ({createdAt}: {createdAt: number}) => {
-	// will need to figure out this logic once we have the data base set up and starts receiving timestamps
-	const a = moment([2021, 0, 25]);
-	const b = moment([2021, 0, 29]);
-
-	return <div className='Date'>{a.from(b)}</div>;
+const Date = ({createdAt}: {createdAt: string}) => {
+	return <div className='Date'>{createdAt}</div>;
 };
 
 export function links() {
