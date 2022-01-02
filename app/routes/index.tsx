@@ -34,12 +34,12 @@ export default function Index() {
 			<div className='Messages'>
 				{data?.messages.map((message: Message) => (
 					<div style={{marginTop: '1rem'}} key={message.id}>
-						<MessageBubble isMobile={false} message={message} />
+						<MessageBubble isMobile={false} message={message} currentUser={data.currentUser} />
 						<div className='Replies'>
 							{message?.replies &&
 								message.replies.map((message: Message) => (
 									<div style={{marginTop: '1rem', width: '500px'}} key={message.id}>
-										<MessageBubble isMobile={false} message={message} />
+										<MessageBubble isMobile={false} message={message} currentUser={data.currentUser} />
 									</div>
 								))}
 						</div>

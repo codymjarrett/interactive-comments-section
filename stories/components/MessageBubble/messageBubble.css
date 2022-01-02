@@ -26,9 +26,10 @@
 	align-items: center;
 }
 
-.MessageBubble__header.MessageBubble__header .Avatar,
-.MessageBubble__header.MessageBubble__header .Handle {
-	margin-right: 1rem;
+.MessageBubble__header.MessageBubble__header .Handle,
+.MessageBubble__header.MessageBubble__header .Identifier,
+.MessageBubble__header.MessageBubble__header .Date {
+	margin-left: 0.6rem;
 }
 
 .Handle {
@@ -53,4 +54,12 @@
 .MessageBubble__footer {
 	display: flex;
 	justify-content: space-between;
+}
+
+.Identifier {
+	background-color: var(--primary-moderate-blue);
+	color: var(--neutral-white);
+	padding: 3px;
+	font-weight: 700;
+	margin-left: 1rem;
 }
