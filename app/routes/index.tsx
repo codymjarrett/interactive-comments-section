@@ -1,5 +1,4 @@
 import {useLoaderData} from 'remix';
-import {user, message} from '../../prisma/client.js';
 
 /* styles */
 import messageBubble from '../../stories/components/MessageBubble/messageBubble.css';
@@ -7,33 +6,21 @@ import action from '../../stories/components/Action/action.css';
 import avatar from '../../stories/components/Avatar/avatar.css';
 import reply from '../../stories/components/Reply/reply.css';
 import vote from '../../stories/components/Vote/vote.css';
+import replies from './index.css';
 
 /* components */
 
 import {MessageBubble} from '../components/';
 
+import {MessageData} from '../../data';
+
 export const loader = async () => {
-	const messages = await message.findMany();
-	const _users = await user.findMany();
-
-	const formattedData = messages.reduce((acc, current) => {
-		const {username, image} = _users.find((user) => user.id === current.userId);
-		acc.push({
-			handle: username,
-
-			createdAt: current.createdAt,
-			text: current.content,
-			image,
-		});
-
-		return acc;
-	}, []);
-
-	return formattedData;
+	const data = await Promise.resolve(MessageData);
+	return data;
 };
 
 export function links() {
-	const stylesheets = [messageBubble, action, avatar, reply, vote];
+	const stylesheets = [messageBubble, action, avatar, reply, vote, replies];
 
 	return stylesheets.map((stylesheet) => ({rel: 'stylesheet', href: stylesheet}));
 }
@@ -43,10 +30,32 @@ export default function Index() {
 	console.log(data);
 
 	return (
-		<div>
-			{data.map((message) => (
-				<MessageBubble isMobile={false} message={message} />
-			))}
+		<div
+			style={{
+				width: '100%',
+				height: '100vh',
+			}}
+		>
+			<div
+				style={{
+					width: '800px',
+					margin: '0 auto',
+				}}
+			>
+				{data.map((message) => (
+					<div style={{marginTop: '1rem'}}>
+						<MessageBubble isMobile={false} message={message} />
+						<div className='Replies'>
+							{message?.replies &&
+								message.replies.map((message) => (
+									<div style={{marginTop: '1rem', width: '500px'}}>
+										<MessageBubble isMobile={false} message={message} />
+									</div>
+								))}
+						</div>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 }
