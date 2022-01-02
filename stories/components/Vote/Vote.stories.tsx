@@ -18,6 +18,7 @@ Desktop.args = {
 	isMobile: false,
 	plusAsset: '/icons/icon-plus.svg',
 	minusAsset: '/icons/icon-minus.svg',
+	score: 4,
 };
 
 export const Mobile = Template.bind({});
@@ -25,4 +26,5 @@ Mobile.args = {
 	isMobile: true,
 	plusAsset: '/icons/icon-plus.svg',
 	minusAsset: '/icons/icon-minus.svg',
+	score: 4,
 };

@@ -1,3 +1,8 @@
+.Container {
+	width: 100%;
+	height: 100vh;
+}
+
 .Messages,
 .Replies {
 	position: relative;
@@ -8,6 +13,7 @@
 
 .Messages {
 	width: 800px;
+	margin: 0 auto;
 }
 
 .Replies {

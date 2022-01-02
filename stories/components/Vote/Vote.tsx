@@ -6,12 +6,18 @@ const Vote = ({
 	// I really hate this but I had to do it.
 	plusAsset = '/assets/icons/icon-plus.svg',
 	minusAsset = '/assets/icons/icon-minus.svg',
+	score = 0,
 }: {
 	isMobile: boolean;
 	plusAsset?: string;
 	minusAsset?: string;
+	score: number;
 }) => {
-	const [votes, setVotes] = useState(0);
+	const [votes, setVotes] = useState(score);
+
+	// React.useEffect(() => {
+	// 	setVotes(score)
+	// }, [score])
 
 	const handleUpVote = () => {
 		setVotes((votes) => votes + 1);

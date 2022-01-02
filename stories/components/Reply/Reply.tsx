@@ -19,7 +19,7 @@ const Button = () => {
 };
 
 const Input = () => {
-	return <textarea className='Reply__input' />;
+	return <textarea className='Reply__input' placeholder='Add a comment...' />;
 };
 const Reply = (props: ReplyProps) => {
 	const {isMobile, user} = props;

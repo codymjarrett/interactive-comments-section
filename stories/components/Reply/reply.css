@@ -5,17 +5,21 @@
 	border-radius: 5px;
 	padding: 1rem;
 	font-size: 13px;
-	min-width: 650px;
-	min-height: 140px;
+	min-width: 565px;
+	max-height: 100px;
 }
 
 .Reply__input {
 	width: 100%;
-	border: 2px solid var(--primary-moderate-blue);
+	border: 2px solid var(--neutral-light-gray);
 	border-radius: 5px;
 	margin: 0 1rem;
-	min-height: 130px;
+	height: 70px;
 	resize: none;
+}
+.Reply__input::placeholder {
+	font-family: 'Rubik', sans-serif;
+	padding: 0.5rem 0 0 0.5rem;
 }
 
 .Reply__button {

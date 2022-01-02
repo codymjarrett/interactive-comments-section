@@ -56,7 +56,7 @@ const MessageBubble = (props: MessageBubbleProps) => {
 			<div className={`MessageBubble ${classNames}`}>
 				<div style={{display: 'flex', alignItems: 'center'}}>
 					<div style={{marginRight: '2rem'}}>
-						<Vote isMobile={isMobile} />
+						<Vote isMobile={isMobile} score={message.score} />
 					</div>
 					<div>
 						<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
@@ -85,7 +85,7 @@ const MessageBubble = (props: MessageBubbleProps) => {
 			</div>
 			<div className='MessageBubble__content'>{message.text}</div>
 			<div className='MessageBubble__footer'>
-				<Vote isMobile={isMobile} />
+				<Vote isMobile={isMobile} score={message.score} />
 				<Action OnClick={() => console.log('should reply')} />
 			</div>
 		</div>

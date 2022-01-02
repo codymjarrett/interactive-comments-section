@@ -10,12 +10,12 @@ import replies from '../styles/index.css';
 
 /* components */
 
-import {MessageBubble, type Message} from '../components/';
+import {MessageBubble, Reply, type Message} from '../components/';
 
-import {MessageData} from '../../data';
+import {data as result} from '../../data';
 
 export const loader = async () => {
-	const data = await Promise.resolve(MessageData);
+	const data = await Promise.resolve(result);
 	return data;
 };
 
@@ -30,26 +30,24 @@ export default function Index() {
 	console.log(data);
 
 	return (
-		<div
-			style={{
-				width: '100%',
-				height: '100vh',
-			}}
-		>
+		<div className='Container'>
 			<div className='Messages'>
-				{data.map((message: Message) => (
-					<div style={{marginTop: '1rem'}}>
+				{data?.messages.map((message: Message) => (
+					<div style={{marginTop: '1rem'}} key={message.id}>
 						<MessageBubble isMobile={false} message={message} />
 						<div className='Replies'>
 							{message?.replies &&
 								message.replies.map((message: Message) => (
-									<div style={{marginTop: '1rem', width: '500px'}}>
+									<div style={{marginTop: '1rem', width: '500px'}} key={message.id}>
 										<MessageBubble isMobile={false} message={message} />
 									</div>
 								))}
 						</div>
 					</div>
 				))}
+				<div style={{marginTop: '1.5rem'}}>
+					<Reply isMobile={false} user={{name: data.currentUser.handle, profile_pic: data.currentUser.image}} />
+				</div>
 			</div>
 		</div>
 	);
