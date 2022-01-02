@@ -1,7 +1,7 @@
 @import '../../../app/styles/shared.css';
 
 .Votes {
-	background-color: var(--neutral-light-gray);
+	background-color: var(--neutral-very-light-gray);
 	border-radius: 5px;
 	width: 30px;
 	height: 75px;
@@ -22,7 +22,7 @@
 
 .Votes button {
 	display: flex;
-	background-color: var(--neutral-light-gray);
+	background-color: var(--neutral-very-light-gray);
 	border: none;
 	cursor: pointer;
 }

@@ -17,14 +17,23 @@ export const Edit = Template.bind({});
 Edit.args = {
 	type: 'edit',
 	OnClick: () => null,
+	replyAsset: '/icons/icon-reply.svg',
+	editAsset: '/icons/icon-edit.svg',
+	deleteAsset: '/icons/icon-delete.svg',
 };
 export const Reply = Template.bind({});
 Reply.args = {
 	type: 'reply',
 	OnClick: () => null,
+	replyAsset: '/icons/icon-reply.svg',
+	editAsset: '/icons/icon-edit.svg',
+	deleteAsset: '/icons/icon-delete.svg',
 };
 export const Delete = Template.bind({});
 Delete.args = {
 	type: 'delete',
 	OnClick: () => null,
+	replyAsset: '/icons/icon-reply.svg',
+	editAsset: '/icons/icon-edit.svg',
+	deleteAsset: '/icons/icon-delete.svg',
 };
