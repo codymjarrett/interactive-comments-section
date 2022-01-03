@@ -43,10 +43,10 @@ const reducer = (state, action) => {
 							handle: 'juliusomo',
 							id: 9,
 							image: '/assets/avatars/image-juliusomo.webp',
-							parentId: 2,
-							replyingTo: 'ramsesmiron',
-							score: 2,
-							text: "I couldn't agree more with this.",
+							parentId,
+							replyingTo: repliedToMessage.handle,
+							// score: 2,
+							text: action.payload.text,
 						});
 					}
 				});
