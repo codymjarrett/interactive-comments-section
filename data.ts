@@ -7,6 +7,7 @@ interface Message {
 	text: string;
 	replyingTo?: string;
 	replies?: Message[];
+	parentId?: number;
 }
 
 interface CurrentUser {
@@ -15,7 +16,7 @@ interface CurrentUser {
 	image: string;
 }
 
-interface Data {
+export interface Data {
 	currentUser: CurrentUser;
 	messages: Message[];
 }
@@ -48,6 +49,7 @@ export const data: Data = {
 					replyingTo: 'maxblagun',
 					handle: 'ramsesmiron',
 					image: '/assets/avatars/image-ramsesmiron.webp',
+					parentId: 2,
 				},
 				{
 					id: 4,
@@ -57,6 +59,7 @@ export const data: Data = {
 					replyingTo: 'ramsesmiron',
 					image: '/assets/avatars/image-juliusomo.webp',
 					handle: 'juliusomo',
+					parentId: 2,
 				},
 			],
 		},
